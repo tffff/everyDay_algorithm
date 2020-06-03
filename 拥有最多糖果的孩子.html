@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>拥有最多糖果的孩子</title>
+</head>
+
+<body>
+  <script>
+    /*
+     * 解题思路 首先是找到已经拥有糖果数最多的，然后是把所有孩子的糖果数加上剩余糖果的与拥有最多的比较
+     * 大于等于最大的糖果数就是可以分配
+     */
+    var kidsWithCandies = function (candies, extraCandies) {
+      var max = Math.max(...candies);
+      // console.log(max)
+      return candies.map(candy=>candy+extraCandies>=max)
+    };
+    console.log(kidsWithCandies([12,1,12],10))
+  </script>
+</body>
+
+</html>

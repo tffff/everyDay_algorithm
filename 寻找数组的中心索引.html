@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var pivotIndex = function (nums) {
+     let leftNumber=0;
+     let sum=nums.reduce((i,j)=>i+j,0)
+     return nums.findIndex(item=>{
+      if(sum-item-leftNumber===leftNumber){
+        return true;
+      }
+      leftNumber+=item
+     })
+    };
+    console.log(pivotIndex([1,2,3]))
+  </script>
+</body>
+
+</html>

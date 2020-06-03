@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /**
+     *首先对比两个数组有没有不同的数字 或者同数字重复的那种
+     *只要数字相同 不管怎么翻转都能一样
+     */
+    var canBeEqual = function (target, arr) {
+      // let obj={},obj1={};
+      // for(var i=0;i<target.length;i++){
+      //   if(obj[target[i]]){
+      //     obj[target[i]]+=1;
+      //   }else{
+      //     obj[target[i]]=1
+      //   }
+      //   if(obj1[arr[i]]){
+      //     obj1[arr[i]]+=1;
+      //   }else{
+      //     obj1[arr[i]]=1
+      //   }
+      // }
+      // let array=Object.keys(obj)
+      // for(var i=0;i<array.length;i++){
+      //   console.log(obj[array[i]],obj1[array[i]])
+      //   if(obj[array[i]]!==obj1[array[i]]){
+      //     return false
+      //   }
+      // }
+      // return true;
+      //对比字符串
+      let a = target.slice(0);
+      let b = arr.slice(0);
+
+      a = a.sort((a, b) => a - b);
+      b = b.sort((a, b) => a - b);
+      return a.toString() === b.toString()
+    };
+    console.log(canBeEqual([1, 2, 2, 3], [1, 1, 2, 3]))
+  </script>
+</body>
+
+</html>

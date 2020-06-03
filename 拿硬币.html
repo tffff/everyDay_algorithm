@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>拿硬币</title>
+</head>
+
+<body>
+  <script>
+    /**
+     *桌上有 n 堆力扣币，每堆的数量保存在数组 coins 中。
+     *我们每次可以选择任意一堆，拿走其中的一枚或者两枚，求拿完所有力扣币的最少次数
+     */
+    var minCount = function (coins) {
+      let arr=[];
+      for(let i=0;i<coins.length;i++){
+        arr.push(Math.ceil(coins[i]/2))
+      }
+      return arr.reduce((a,b)=>a+b,0)
+    };
+    console.log(minCount([4,2,1]))
+  </script>
+</body>
+
+</html>

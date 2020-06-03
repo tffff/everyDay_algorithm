@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数组中两元素的最大乘积</title>
+</head>
+
+<body>
+  <script>
+    var maxProduct = function (nums) {
+     let arr= nums.sort((a,b)=>a-b);
+     let len=arr.length;
+     return (nums[len-1]-1)*(nums[len-2]-1)
+    };
+    console.log(maxProduct([3,4,5,2]))
+  </script>
+</body>
+
+</html>

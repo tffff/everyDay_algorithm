@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var decompressRLElist = function (nums) {
+      let arr = [];
+      for (let i = 0; i < nums.length / 2; i++) {
+        console.log(nums[2 * i+ 1])
+        for(let j=0;j<nums[2*i];j++){
+          arr.push(nums[2 * i+ 1])
+        }
+      }
+      console.log(arr)
+    };
+    console.log(decompressRLElist([1,1,2,3]))
+  </script>
+</body>
+
+</html>

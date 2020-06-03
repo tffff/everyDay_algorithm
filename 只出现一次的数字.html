@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>只出现一次的数字</title>
+</head>
+
+<body>
+  <script>
+    /*
+     * 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素
+     * 
+     */
+    var singleNumber = function (nums) {
+      //第一种
+      // let arr = [];
+      // for (let i = 0; i < nums.length; i++) {
+      //   for (let j = 0; j < nums.length; j++) {
+      //     if (nums[i] == nums[j] && i !== j) {
+      //       arr.push(nums[i])
+      //     }
+      //   }
+      // }
+      // return nums.filter(item => arr.findIndex(value=>value===item)===-1);
+      //第二种
+      // let arr=[],map=new Map();
+      // for(let item of nums){
+      //   if(map.has(item)){
+      //     map.delete(item)
+      //   }else{
+      //     map.set(item,1)
+      //   }
+      // }
+      // map.forEach((item,index)=>{
+      //   arr.push(index)
+      // })
+      // return arr;
+      //第三种 其余每个元素均出现了三次。找出那个只出现了一次的元素
+      // let arr=[],obj={};
+      // for(let i=0;i<nums.length;i++){  
+      //   obj[nums[i]]=obj[nums[i]]?obj[nums[i]]+1:1
+      // }
+      // return Object.keys(obj).filter(item=>obj[item]===1)[0]
+      
+    };
+    console.log(singleNumber([0,1,0,1,0,1,99]))
+    //第四种 
+    var majorityElement = function(nums) {
+      let len=nums.length;
+      let obj={};
+      nums.forEach(item=>{
+          obj[item]=obj[item]?++obj[item]:1
+      })
+      return Object.keys(obj).filter(item=>obj[item]>len/2)[0]
+    };
+    console.log(majorityElement([2,2,1,1,1,2,2]))
+  </script>
+</body>
+
+</html>

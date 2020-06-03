@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6和9组成的最大数字</title>
+</head>
+
+<body>
+  <script>
+    var maximum69Number = function (num) {
+      let arr = num.toString().split('');
+      let index = arr.indexOf('6');
+      if(index>-1){
+        arr[index]='9'
+      }
+      return Number(arr.join(''))
+    };
+    console.log(maximum69Number(9669))
+  </script>
+</body>
+
+</html>

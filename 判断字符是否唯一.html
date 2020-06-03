@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>判断字符是否唯一</title>
+</head>
+
+<body>
+  <script>
+    /**
+    *首先是切割字符串成数组，然后是用键值对存储值的个数 如果有则为false
+    */
+    var isUnique = function (astr) {
+      let arr=astr.split(''),obj={},flag=true;
+      for(var i=0;i<arr.length;i++){
+        if(obj[arr[i]]){
+          flag=false
+        }else{
+          obj[arr[i]]=1
+        }
+      }
+      return flag;
+    };
+    console.log(isUnique('leetcode'))
+  </script>
+</body>
+
+</html>

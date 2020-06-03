@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var smallerNumbersThanCurrent = function (nums) {
+      let data=[];
+      //es6
+      for(var i=0;i<nums.length;i++){
+        var arr=nums.filter(item=>item!=nums[i]);
+        let len=arr.filter(item=>nums[i]>item).length;
+        data.push(len)
+      }
+      //两层for循环
+      for(var i=0;i<nums.length;i++){
+        let count=0;
+        for(var j=0;j<nums.length;j++){
+          if(i===j) continue;
+          if(nums[i]>nums[j]){
+            count++
+          }
+        }
+        data.push(count)
+      }
+    };
+    smallerNumbersThanCurrent([7,7,7,7])
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var minimumAbsDifference = function (arr) {
+      let result=[],obj={};
+      let data=arr.sort((a,b)=>a-b);
+      console.log(data)
+      for(let i=0;i<data.length-1;i++){
+        if(obj[data[i+1]-data[i]]){
+          obj[data[i+1]-data[i]].push([data[i],data[i+1]])
+        }else{
+          obj[data[i+1]-data[i]]=new Array([data[i],data[i+1]])
+        }
+      }
+      let min=Math.min(...Object.keys(obj).map(item=>+item));
+      return obj[min]
+    };
+    console.log(minimumAbsDifference([3,8,-10,23,19,-4,-14,27]))
+  </script>
+</body>
+
+</html>

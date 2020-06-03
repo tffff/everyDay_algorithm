@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>统计作战单位数</title>
+</head>
+
+<body>
+  <script>
+    var numTeams = function (rating) {
+      let count=0,len=rating.length;
+      if(len<3) return count;
+      for(let i=0;i<len-2;i++){
+        for(let j=i+1;j<len-1;j++){
+          for(let k=j+1;k<len;k++){
+            if((rating[i]<rating[j]&&rating[j]<rating[k])||(rating[i]>rating[j]&&rating[j]>rating[k])){
+              count++;
+              console.log(i,j,k)
+              console.log('参数',rating[i],rating[j],rating[k])
+            }
+          }
+        }
+      }
+      return count;
+    };
+    console.log(numTeams([3,6,7,5,1]))
+  </script>
+</body>
+
+</html>

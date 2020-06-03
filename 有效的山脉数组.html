@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>有效的山脉数组</title>
+</head>
+
+<body>
+  <script>
+    var validMountainArray = function (A) {
+      let len=A.length;
+      if(len<3){
+        return false;
+      }else{
+        let i=0;
+        let j=len-1;
+        while(i<len-2&&A[i]<A[i+1]){
+          i++
+        }
+        while(j>1&&a[j]<A[j-1]){
+          j--
+        }
+        return i===j
+      }
+    };
+    console.log(validMountainArray([0,3,2,1]))
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>调整数组的顺序使奇数位于偶数前面</title>
+</head>
+
+<body>
+  <script>
+    var exchange = function (nums) {
+      //使用两个数组
+      let odd=[],even=[];
+      for(let i=0;i<nums.length;i++){
+        if(nums[i]%2===0) even.push(nums[i])
+        if(nums[i]%2!==0) odd.push(nums[i])
+      }
+      return [...even,...odd]
+    };
+    console.log(exchange([1,2,3,4]))
+  </script>
+</body>
+
+</html>

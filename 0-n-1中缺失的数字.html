@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var missingNumber = function (nums) {
+      //第一种 时间复杂度O(n)
+      // for(let i=0;i<nums.length+1;i++){
+      //   if(nums[i]!==i){
+      //     return i
+      //   }
+      // }
+      //第二种  二分法
+      let left=0,right=nums.length-1;
+      while(left<=right){
+        let mid = Math.floor((left + right) / 2);
+        if(mid===nums[mid]){
+          left=mid+1;
+        }
+        if(mid<nums[mid]){
+          right=mid-1
+        }
+      }
+      return left;
+    };
+    console.log(missingNumber([0,1,2,3,4,5,6,7,9]))
+    console.log(missingNumber([0]))
+    console.log(missingNumber([0,1,2,3,4,6]))
+  </script>
+</body>
+
+</html>

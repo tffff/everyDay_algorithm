@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>合并排序的数组</title>
+</head>
+
+<body>
+  <script>
+    /**
+    *给定两个排序后的数组 A 和 B，其中 A 的末端有足够的缓冲空间容纳 B。 编写一个方法，将 B 合并入 A 并排序。
+    初始化 A 和 B 的元素数量分别为 m 和 n。
+    输入:
+    A = [1,2,3,0,0,0], m = 3
+    B = [2,5,6],       n = 3
+
+    输出: [1,2,2,3,5,6]
+    */
+    var merge = function (A, m, B, n) {
+      //暴力解法
+      // for(let i=m,j=0;i<A.length;j++,i++){
+      //   A[i]=B[j]
+      // }
+      // return A.sort((a,b)=>a-b)
+
+      // let i=0;j=m;
+      // while(n>0){
+      //   A[j]=B[i];
+      //   j++;
+      //   i++;
+      //   n--;
+      // }
+      // return A.sort((a,b)=>a-b)
+      //归并排序
+      let i = m - 1;
+      j = n - 1;
+      current = m + n - 1;
+      while (i > 0 && j > 0) {
+        if (A[i] <= B[j]) {
+          A[current] = B[j];
+          current--;
+          j--;
+        } else {
+          A[current] = A[i];
+          i--;
+          current--;
+        }
+      }
+      while (j >= 0) {
+        A[current] = B[j]
+        j--;
+        current--
+      }
+      return A;
+    };
+    console.log(merge([1,2,3,0,0,0], 3, [2,5,6], 3))
+  </script>
+</body>
+
+</html>

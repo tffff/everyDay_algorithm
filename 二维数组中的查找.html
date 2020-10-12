@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，
+    // 每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
+    var findNumberIn2DArray = function (matrix, target) {
+      //暴力法 时间复杂度O(n^2)
+      // let flag=false;
+      // for(let i=0;i<matrix.length;i++){
+      //   for(let j=0;j<matrix[i].length;j++){
+      //     if(matrix[i][j]===target){
+      //       flag=true;
+      //     }
+      //   }
+      // }
+      // return flag
+
+      //双指针
+      if (matrix.length === 0) return false
+      if (matrix[0].length === 0) return false
+      let xlen = matrix[0].length, ylen = matrix.length;
+      let x = ylen - 1, y = 0;//横着一个指针，竖着一个指针
+      while (x >=0 && y<xlen) {
+        if (matrix[x][y] === target) {
+          return true
+        }
+        if (matrix[x][y] < target) {
+          y++
+        } else{
+          x--
+        }
+      }
+      return false
+
+    };
+    console.log(findNumberIn2DArray([[-5]],
+      -10
+    ))
+  </script>
+</body>
+
+</html>

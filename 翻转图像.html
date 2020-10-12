@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var flipAndInvertImage = function (A) {
+      for (let i = 0; i < A.length; i++) {
+        let first=0,last=A[i].length-1;
+        while(first<last&&first!==last){
+          [A[i][first],A[i][last]]=[A[i][last],A[i][first]]
+          first++;
+          last--;
+        }
+        let len=A[i].length
+        for(let k=0;k<len;k++){
+          A[i][k]=A[i][k]===0?1:0
+        }
+      }
+      return A
+    };
+    console.log(flipAndInvertImage([[1, 1, 0], [1, 0, 1], [0, 0, 0]]))
+  </script>
+</body>
+
+</html>

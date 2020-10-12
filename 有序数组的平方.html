@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 给定一个按非递减顺序排序的整数数组 A，返回每个数字的平方组成的新数组，要求也按非递减顺序排序。 -->
+  <!-- 输入：[-4,-1,0,3,10]
+  输出：[0,1,9,16,100] -->
+  <script>
+    var sortedSquares = function (A) {
+      let i=0,j=A.length-1,current=j;
+      let res = []
+      while(i<=j){
+        if(Math.pow(A[i],2)>Math.pow(A[j],2)){
+          res[current--]=Math.pow(A[i++],2)
+        }else{
+          res[current--]=Math.pow(A[j--],2)
+        }
+      }
+      return res
+    };
+    console.log(sortedSquares([-4,-1,0,3,10]))
+  </script>
+</body>
+
+</html>

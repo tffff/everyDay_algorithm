@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //动态规划 不断用当前值与前一个值相加
+    var runningSum = function (nums) {
+      for(let i=1;i<nums.length;i++){
+        nums[i]=nums[i]+nums[i-1]
+      }
+      return nums
+    };
+    console.log(runningSum([1,2,3,4]))
+  </script>
+</body>
+
+</html>

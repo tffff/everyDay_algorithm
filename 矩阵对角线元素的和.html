@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var diagonalSum = function (mat) {
+      // let result = [], total = 0;
+      // for (let i = 0; i < mat.length; i++) {
+      //   for (let j = 0; j < mat[i].length; j++) {
+      //     if (i === j) {
+      //       result.push(mat[i][j])
+      //     }
+      //     if (i + j === mat.length - 1) {
+      //       result.push(mat[i][j])
+      //     }
+      //   }
+      // }
+      // let len = result.length;
+      // let total1 = result.reduce((total, current) => current + total, 0)
+      // return mat.length%2!==0?total1 - result[Math.floor(len / 2)]:total1
+    };
+    console.log(diagonalSum(
+      [[1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9]]
+    ))
+  </script>
+</body>
+
+</html>

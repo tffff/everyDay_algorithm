@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 编写一个函数，以字符串作为输入，反转该字符串中的元音字母。 -->
+  <!-- 输入："hello"
+      输出："holle" -->
+  <script>
+    var reverseVowels = function (s) {
+      let set = new Set(['a','e','i','o','u','A','E','I','O','U'])
+      let arr=s.split('')
+      let i=0;j=arr.length-1
+      while(i<j){
+        if(set.has(arr[i])){
+          if(set.has(arr[j])){
+            [arr[i],arr[j]] = [arr[j],arr[i]];
+            i++;
+          }
+          j--
+        }else{
+          i++
+        }
+      }
+      return arr.join('')
+    };
+    console.log(reverseVowels('hello'))
+  </script>
+</body>
+
+</html>

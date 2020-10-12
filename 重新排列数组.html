@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var shuffle = function (nums, n) {
+      let result=[]
+      for(let i=0;i<n;i++){
+        result.push(nums[i],nums[i+n])
+      }
+      return result;
+    };
+    console.log(shuffle([2,5,1,3,4,7],3))
+  </script>
+</body>
+
+</html>

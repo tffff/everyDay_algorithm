@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var isLongPressedName = function (name, typed) {
+      let obj1={},obj2={}
+      let arr1=name.split('')
+      let arr2=typed.split('')
+      for(let i=0;i<arr1.length;i++){
+        if(obj1[arr1[i]]){
+          obj1[arr1[i]]++
+        }else{
+          obj1[arr1[i]]=1
+        }
+      }
+      for(let i=0;i<arr2.length;i++){
+        if(obj2[arr2[i]]){
+          obj2[arr2[i]]++
+        }else{
+          obj2[arr2[i]]=1
+        }
+      }
+      let flag=true
+      if(Object.keys(obj1).length>Object.keys(obj2).length) flag=false
+      for(var item in obj1){
+        if(obj2[item]<obj1[item]){
+          flag=false
+        }
+      }
+      return flag;
+    };
+    console.log(isLongPressedName('xnhtq','xhhttqq'))
+  </script>
+</body>
+
+</html>

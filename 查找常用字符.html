@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var commonChars = function (A) {
+      let firstArr=A[0].split('')
+      let result=[]
+      for(let i=1;i<A.length;i++){
+        let arr=A[i].split('')
+        for(let j=0;j<firstArr.length;j++){
+          if(arr.findIndex(v=>v==firstArr[j])>-1){
+            arr.splice(arr.findIndex(v=>v==firstArr[j]),1)
+            result.push(arr[arr.findIndex(v=>v==firstArr[j])])
+          }
+        }
+      }
+      console.log(result)
+    };
+    console.log(commonChars(["bella","label","roller"]))
+  </script>
+</body>
+
+</html>

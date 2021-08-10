@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>主要元素</title>
+  </head>
+  <body>
+    <script>
+      //数组中占比超过一半的元素称之为主要元素。给定一个整数数组，找到它的主要元素。若没有，返回-1
+      //输入：[1,2,5,9,5,9,5,5,5]
+      //输出：5
+      var majorityElement = function (nums) {
+        let obj={},result=-1;
+        let num = nums.length/2;
+        for(let i=0;i<nums.length;i++){
+          if(obj[nums[i]]){
+            obj[nums[i]]++
+          }else{
+            obj[nums[i]]=1
+          }
+          if(obj[nums[i]]>=num){
+            result = nums[i]
+          }
+        }
+        return result
+      };
+      console.log(majorityElement([1,2,5,9,5,9,5,5,5],5))
+    </script>
+  </body>
+</html>

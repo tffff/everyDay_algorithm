@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var findTheDistanceValue = function (arr1, arr2, d) {
+      let total=0;
+      for(let i=0;i<arr1.length;i++){
+        let flag=true;
+        for(let j=0;j<arr2.length;j++){
+          if(Math.abs(arr1[i]-arr2[j])<=d){
+            flag=false
+            break;
+          }
+        }
+        if(flag){
+          total++
+        }
+      }
+      return total
+    };
+    console.log(findTheDistanceValue([4,5,8],[10,9,1,8],2))
+  </script>
+</body>
+
+</html>

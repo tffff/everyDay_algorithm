@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var sumZero = function (n) {
+      let result=[]
+      let sum=0
+      for(let i=0;i<n-1;i++){
+        result.push(i)
+        sum+=i
+      }
+      result.push(-sum)
+      return result
+    };
+    console.log(sumZero(5))
+  </script>
+</body>
+
+</html>

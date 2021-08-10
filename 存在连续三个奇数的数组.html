@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var threeConsecutiveOdds = function (arr) {
+      //   if(arr.length<3) return false
+      //   let allArr=[],flag;
+      //   for(let i=0;i<arr.length-2;i++){
+      //     let arr3=arr.slice(i,i+3)
+      //     flag=true
+      //     for(let j=0;j<arr3.length;j++){
+      //       if(arr3[j]%2===0){
+      //         flag=false
+      //         break
+      //       }
+      //     }
+      //     if(flag){
+      //       break
+      //     }
+      //   }
+      //  return flag
+      for (let i = 0; i < arr.length - 2; i++) {
+        if (arr[i] % 2 === 1 && arr[i + 1] % 2 === 1 && arr[i + 2] % 2 === 1) {
+          return true
+        }
+      }
+      return false
+    };
+    console.log(threeConsecutiveOdds([1]))
+  </script>
+</body>
+
+</html>
